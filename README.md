@@ -83,6 +83,7 @@ Change the variables below in a copy of the theme, or override them with card-mo
 | `glass-filter` | Blur and saturation behind cards and the sidebar (card-mod) |
 | `glass-on-plate`, `glass-on-plate-text` | Plate colour and text colour of active tiles (card-mod) |
 | `glass-on-glow` | Warm glow under active tiles (card-mod) |
+| `glass-date-row` | Sticky date row of the logbook card, almost opaque so the date shows once (card-mod) |
 | `primary-color`, `ha-color-primary-*` | Accent colour and the blue scale the frontend uses for buttons and switches |
 
 ## Known limits
