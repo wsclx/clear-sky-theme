@@ -1,5 +1,7 @@
 # Clear Sky
 
+[![Open your Home Assistant instance and open this repository in the Marketplace.](https://my.home-assistant.io/badges/marketplace_repository.svg)](https://my.home-assistant.io/redirect/marketplace_repository/?owner=wsclx&repository=clear-sky-theme&category=theme)
+
 A translucent theme for Home Assistant: frosted cards on a sky gradient, light and dark mode in one theme.
 
 ![Clear Sky, light mode on desktop](https://raw.githubusercontent.com/wsclx/clear-sky-theme/main/images/dashboard-light-desktop.png)
