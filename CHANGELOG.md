@@ -1,0 +1,14 @@
+# Changelog
+
+All notable changes to this theme are documented here.
+The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versions follow [Semantic Versioning](https://semver.org/).
+
+## [Unreleased]
+
+## [1.0.0] - YYYY-MM-DD
+
+### Added
+- First release: one theme with light and dark mode.
+- Translucent cards on a sky gradient, calm background for settings and editors.
+- Optional card-mod rules: blur behind cards, floating sidebar, bright plate for active tiles.
+- Optional variables for Bubble Card and navbar-card.

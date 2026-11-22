@@ -1,0 +1,265 @@
+# Clear Sky: a translucent theme for Home Assistant with light and dark mode in one theme.
+#
+# Three layers: a sky gradient behind dashboards (lovelace-background), cards as frosted panes, and a
+# calm solid background for settings and editors. Entities that are on (lights, media, climate ...) can
+# turn into a bright, opaque plate when card-mod is installed.
+#
+# Works without any add-on: colours, radii and the translucent cards come from plain theme variables.
+# With card-mod 4.x installed (optional), the card-mod-* keys below add the backdrop blur behind cards,
+# the floating sidebar and the "bright plate" for active tiles. Without card-mod those keys are ignored.
+# Bubble Card and navbar-card variables are optional too and only apply when those cards are installed.
+#
+# Fonts: system fonts only (SF Pro on Apple devices, the platform UI font elsewhere). Nothing is downloaded.
+Clear Sky:
+  card-mod-theme: Clear Sky
+
+  # Theme-own variables, used by the card-mod rules below
+  glass-filter: "blur(28px) saturate(1.7)"
+  glass-rim: "rgba(255,255,255,.72)"
+  glass-edge: "inset 0 1px 0 rgba(255,255,255,.9), inset 0 -1px 0 rgba(255,255,255,.25)"
+  glass-shadow: "0 10px 30px rgba(20,40,80,.10), 0 1px 2px rgba(20,40,80,.06)"
+  glass-field: "rgba(255,255,255,.85)"
+  glass-on-plate: "#ffffff"
+  glass-on-plate-text: "#1d1d1f"
+  glass-on-plate-text-2: "#55555c"
+  glass-on-glow: "rgba(190,120,20,.30)"
+
+  # Core colours. #0068d6 keeps white text on primary above 4.5:1.
+  primary-color: "#0068d6"
+  accent-color: "#0068d6"
+  text-primary-color: "#ffffff"
+  primary-text-color: "#1d1d1f"
+  secondary-text-color: "#55555c"
+  disabled-text-color: "#8e8e93"
+  # Newer frontends colour buttons, switches and tabs from this scale instead of primary-color.
+  ha-color-primary-05: "#001229"
+  ha-color-primary-10: "#00224d"
+  ha-color-primary-20: "#003a80"
+  ha-color-primary-30: "#0052b3"
+  ha-color-primary-40: "#0066cc"
+  ha-color-primary-50: "#0a7cff"
+  ha-color-primary-60: "#3d97ff"
+  ha-color-primary-70: "#70b3ff"
+  ha-color-primary-80: "#a8d0ff"
+  ha-color-primary-90: "#d6e8ff"
+  ha-color-primary-95: "#ebf4ff"
+
+  # Backgrounds: sky behind dashboards, calm grey for settings and editors
+  primary-background-color: "#eeeef3"
+  secondary-background-color: "#e5e5ea"
+  lovelace-background: "radial-gradient(900px 620px at 82% 6%, rgba(255,240,214,.95), rgba(255,240,214,0) 62%), radial-gradient(760px 520px at 6% 96%, rgba(160,200,236,.9), rgba(160,200,236,0) 70%), radial-gradient(520px 360px at 62% 78%, rgba(255,206,160,.55), rgba(255,206,160,0) 70%), linear-gradient(180deg, #86b3de 0%, #bcd4ec 46%, #eadfd2 100%)"
+
+  # Cards
+  card-background-color: "rgba(255,255,255,.66)"
+  ha-card-background: "rgba(255,255,255,.66)"
+  ha-card-border-color: "rgba(255,255,255,.72)"
+  ha-card-border-width: "1px"
+  ha-card-border-radius: "22px"
+  ha-card-box-shadow: "0 1px 1px rgba(20,40,80,.05), 0 10px 30px rgba(20,40,80,.08)"
+  divider-color: "rgba(60,60,67,.16)"
+
+  # Dialogs: the frontend applies the blur itself through these variables, no card-mod needed
+  ha-dialog-border-radius: "28px"
+  ha-dialog-surface-background: "rgba(246,246,250,.78)"
+  ha-dialog-surface-backdrop-filter: "blur(40px) saturate(1.8)"
+  ha-dialog-scrim-backdrop-filter: "blur(6px)"
+  mdc-dialog-scrim-color: "rgba(0,0,0,.18)"
+  mdc-theme-surface: "rgba(246,246,250,.94)"
+  dialog-backdrop-filter: "blur(10px)"
+  paper-dialog-background-color: "var(--card-background-color)"
+
+  # Header and sidebar
+  app-header-background-color: "rgba(246,246,250,.72)"
+  app-header-text-color: "#1d1d1f"
+  app-header-border-bottom: "1px solid rgba(60,60,67,.12)"
+  sidebar-background-color: "rgba(246,246,250,.82)"
+  sidebar-text-color: "#1d1d1f"
+  sidebar-icon-color: "#0068d6"
+  sidebar-selected-text-color: "#1d1d1f"
+  sidebar-selected-icon-color: "#0068d6"
+  sidebar-menu-button-text-color: "#1d1d1f"
+
+  # Inputs and forms
+  input-background-color: "var(--glass-field)"
+  input-fill-color: "var(--glass-field)"
+  input-ink-color: "var(--primary-text-color)"
+  input-label-ink-color: "var(--secondary-text-color)"
+  input-disabled-fill-color: "var(--glass-field)"
+  input-disabled-ink-color: "var(--secondary-text-color)"
+  input-idle-line-color: "var(--divider-color)"
+  input-hover-line-color: "var(--primary-color)"
+  input-dropdown-icon-color: "var(--secondary-text-color)"
+  input-outlined-idle-border-color: "var(--divider-color)"
+  input-outlined-hover-border-color: "var(--primary-color)"
+  mdc-select-fill-color: "var(--glass-field)"
+  mdc-select-ink-color: "var(--primary-text-color)"
+  mdc-select-label-ink-color: "var(--secondary-text-color)"
+  mdc-select-idle-line-color: "var(--divider-color)"
+  mdc-select-dropdown-icon-color: "var(--secondary-text-color)"
+  mdc-text-field-fill-color: "var(--glass-field)"
+  mdc-text-field-ink-color: "var(--primary-text-color)"
+  mdc-text-field-label-ink-color: "var(--secondary-text-color)"
+  mdc-text-field-idle-line-color: "var(--divider-color)"
+  ha-color-form-background: "var(--glass-field)"
+  ha-color-form-background-hover: "var(--glass-field)"
+  ha-color-fill-neutral-quiet-hover: "var(--glass-field)"
+  clear-background-color: "var(--glass-field)"
+  ha-tooltip-background-color: "var(--glass-field)"
+  code-editor-background-color: "var(--glass-field)"
+  markdown-code-background-color: "var(--glass-field)"
+  switch-checked-button-color: "var(--primary-color)"
+  switch-checked-track-color: "var(--primary-color)"
+  switch-unchecked-button-color: "var(--secondary-text-color)"
+  switch-unchecked-track-color: "var(--divider-color)"
+
+  # Typography: system fonts
+  ha-font-family-body: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', system-ui, sans-serif"
+  ha-font-family-heading: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', system-ui, sans-serif"
+  ha-font-family-code: "ui-monospace, 'SF Mono', Menlo, monospace"
+  code-font-family: "ui-monospace, 'SF Mono', Menlo, monospace"
+
+  # State and palette colours: lights amber, heating orange, media purple, cameras and cleaning teal, safety green
+  success-color: "#1f8a3b"
+  warning-color: "#a65f00"
+  error-color: "#d70015"
+  amber-color: "#f2a100"
+  deep-purple-color: "#b44ad6"
+  blue-color: "#0a7cff"
+  teal-color: "#1aa6b9"
+  indigo-color: "#5856d6"
+  green-color: "#2a9d47"
+  orange-color: "#f26b1d"
+  deep-orange-color: "#e8590c"
+  grey-color: "#8e8e93"
+  red-color: "#ff3b30"
+  cyan-color: "#1aa6b9"
+  purple-color: "#b44ad6"
+  state-icon-color: "#3a3a3f"
+  # A darker grey reads as "selected off" on glass instead of "disabled"
+  state-climate-off-color: "#636366"
+
+  # Optional: Bubble Card pop-ups as a glass sheet
+  bubble-pop-up-main-background-color: "rgba(246,246,250,.92)"
+  bubble-pop-up-background-color: "rgba(246,246,250,.92)"
+  bubble-pop-up-border-radius: "38px"
+  bubble-pop-up-border: "1px solid rgba(255,255,255,.72)"
+  bubble-backdrop-background-color: "rgba(0,0,0,.18)"
+  bubble-backdrop-filter: "blur(6px)"
+  bubble-main-background-color: "rgba(255,255,255,.62)"
+  bubble-border-radius: "20px"
+
+  # Optional: navbar-card as a floating glass bar
+  navbar-background-color: "rgba(255,255,255,.5)"
+  navbar-border-radius: "31px"
+  navbar-box-shadow: "inset 0 1px 0 rgba(255,255,255,.9), 0 12px 36px rgba(20,40,80,.14)"
+  navbar-box-shadow-desktop: "inset 0 1px 0 rgba(255,255,255,.9), 0 12px 36px rgba(20,40,80,.14)"
+  navbar-box-shadow-mobile-floating: "inset 0 1px 0 rgba(255,255,255,.9), 0 12px 36px rgba(20,40,80,.14)"
+  navbar-primary-color: "#0068d6"
+
+  # Optional, card-mod 4.x: blur behind cards; tiles of switchable entities that are on become a bright plate.
+  # The domain list matters: the tile card marks any entity with a value as active, sensors included.
+  card-mod-card: |
+    ha-card {
+      -webkit-backdrop-filter: var(--glass-filter);
+      backdrop-filter: var(--glass-filter);
+    }
+    ha-card.active:has(ha-tile-icon:is([data-domain=light], [data-domain=switch], [data-domain=fan], [data-domain=media_player], [data-domain=climate], [data-domain=input_boolean], [data-domain=humidifier], [data-domain=water_heater], [data-domain=vacuum], [data-domain=remote], [data-domain=siren], [data-domain=automation], [data-domain=script])) {
+      --ha-card-background: var(--glass-on-plate);
+      background: var(--glass-on-plate);
+      border-color: transparent;
+      box-shadow: 0 10px 28px var(--glass-on-glow), 0 1px 2px rgba(0,0,0,.08);
+      --primary-text-color: var(--glass-on-plate-text);
+      --secondary-text-color: var(--glass-on-plate-text-2);
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+  # Optional, card-mod 4.x: settings icons as rounded squares instead of circles
+  card-mod-config: |
+    :host {
+      --ha-border-radius-circle: 10px;
+    }
+  # Optional, card-mod 4.x: the sky covers the whole window, so the floating sidebar sits on it
+  card-mod-root: |
+    hui-view-background { position: fixed !important; inset: 0 !important; width: auto !important; height: auto !important; }
+  # Optional, card-mod 4.x: sidebar as a floating glass pane with rounded selection
+  card-mod-sidebar: |
+    :host {
+      margin: 8px;
+      width: calc(100% - 16px);
+      height: calc(100% - 16px);
+      border-radius: 20px;
+      border: 1px solid var(--glass-rim);
+      box-shadow: var(--glass-edge), var(--glass-shadow);
+      -webkit-backdrop-filter: var(--glass-filter);
+      backdrop-filter: var(--glass-filter);
+    }
+    .menu { border-bottom: 0; }
+    ha-list-item-button { border-radius: 10px; }
+    ha-list-item-button.selected::before { border-radius: 10px; opacity: .14; }
+
+  modes:
+    light: {}
+    dark:
+      glass-rim: "rgba(255,255,255,.14)"
+      glass-edge: "inset 0 1px 0 rgba(255,255,255,.18), inset 0 -1px 0 rgba(255,255,255,.04)"
+      glass-shadow: "0 14px 40px rgba(0,0,0,.40), 0 1px 2px rgba(0,0,0,.30)"
+      glass-field: "rgba(255,255,255,.07)"
+      glass-on-plate: "rgba(246,246,248,.96)"
+      glass-on-plate-text: "#1d1d1f"
+      glass-on-plate-text-2: "#55555c"
+      glass-on-glow: "rgba(255,180,90,.22)"
+      primary-color: "#4c9dff"
+      accent-color: "#4c9dff"
+      # Dark text on the light blue: white on #4c9dff only reaches 2.8:1
+      text-primary-color: "#001229"
+      primary-text-color: "#f5f5f7"
+      secondary-text-color: "#a7a7b0"
+      disabled-text-color: "#7c7c85"
+      primary-background-color: "#141416"
+      secondary-background-color: "#1c1c1e"
+      # Night sky: cool blue at the top, a warm glow at the bottom right
+      lovelace-background: "radial-gradient(820px 560px at 88% 96%, rgba(255,160,80,.34), rgba(255,160,80,0) 68%), radial-gradient(700px 480px at 10% 4%, rgba(80,120,255,.26), rgba(80,120,255,0) 70%), radial-gradient(500px 340px at 52% 40%, rgba(140,90,220,.14), rgba(140,90,220,0) 70%), linear-gradient(180deg, #0b1428 0%, #121b33 52%, #1b1726 100%)"
+      card-background-color: "rgba(30,32,42,.58)"
+      ha-card-background: "rgba(30,32,42,.58)"
+      ha-card-border-color: "rgba(255,255,255,.09)"
+      ha-card-box-shadow: "0 10px 30px rgba(0,0,0,.28)"
+      ha-dialog-surface-background: "rgba(32,34,44,.78)"
+      mdc-dialog-scrim-color: "rgba(0,0,0,.35)"
+      mdc-theme-surface: "rgba(32,34,44,.94)"
+      divider-color: "rgba(235,235,245,.12)"
+      app-header-background-color: "rgba(28,28,32,.72)"
+      app-header-text-color: "#f5f5f7"
+      app-header-border-bottom: "1px solid rgba(235,235,245,.08)"
+      sidebar-background-color: "rgba(28,28,32,.82)"
+      sidebar-text-color: "#f5f5f7"
+      sidebar-icon-color: "#4c9dff"
+      sidebar-selected-text-color: "#f5f5f7"
+      sidebar-selected-icon-color: "#4c9dff"
+      sidebar-menu-button-text-color: "#f5f5f7"
+      success-color: "#3fd16b"
+      warning-color: "#ffb340"
+      error-color: "#ff6961"
+      amber-color: "#ffb800"
+      deep-purple-color: "#cf72ef"
+      blue-color: "#4c9dff"
+      teal-color: "#3ccbdc"
+      indigo-color: "#7d7aff"
+      green-color: "#3fd16b"
+      orange-color: "#ff8a3d"
+      deep-orange-color: "#ff7a45"
+      grey-color: "#a7a7b0"
+      red-color: "#ff453a"
+      cyan-color: "#3ccbdc"
+      purple-color: "#cf72ef"
+      state-icon-color: "#d8d8de"
+      state-climate-off-color: "#8e8e93"
+      bubble-pop-up-main-background-color: "rgba(28,30,40,.92)"
+      bubble-pop-up-background-color: "rgba(28,30,40,.92)"
+      bubble-pop-up-border: "1px solid rgba(255,255,255,.14)"
+      bubble-backdrop-background-color: "rgba(0,0,0,.35)"
+      bubble-main-background-color: "rgba(30,32,42,.58)"
+      navbar-background-color: "rgba(38,40,52,.5)"
+      navbar-box-shadow: "inset 0 1px 0 rgba(255,255,255,.18), 0 14px 40px rgba(0,0,0,.45)"
+      navbar-box-shadow-desktop: "inset 0 1px 0 rgba(255,255,255,.18), 0 14px 40px rgba(0,0,0,.45)"
+      navbar-box-shadow-mobile-floating: "inset 0 1px 0 rgba(255,255,255,.18), 0 14px 40px rgba(0,0,0,.45)"
+      navbar-primary-color: "#4c9dff"
