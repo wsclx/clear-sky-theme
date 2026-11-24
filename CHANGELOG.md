@@ -5,6 +5,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), ver
 
 ## [Unreleased]
 
+## [1.0.2] - 2026-11-24
+
+### Changed
+- README: Clear Sky is in the default catalog now, so the note about adding it as a custom repository is gone. The theme file is unchanged, so updating changes nothing on your dashboards.
+
 ## [1.0.1] - 2026-11-22
 
 ### Fixed
