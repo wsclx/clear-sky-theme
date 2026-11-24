@@ -34,7 +34,6 @@ Without card-mod the theme still works: colours, radii and translucent cards com
 
 1. Open **Settings → Marketplace** (or HACS on older versions).
 2. Search for **Clear Sky** and download it.
-   Until the theme is listed in the default catalog, add this repository as a custom repository of type **Theme** first.
 3. Reload themes: **Developer tools → Actions → `frontend.reload_themes`**.
 
 ### Manual
