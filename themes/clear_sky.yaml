@@ -159,6 +159,7 @@ Clear Sky:
   navbar-primary-color: "#0068d6"
 
   # Optional, card-mod 4.x: blur behind cards; tiles of switchable entities that are on become a bright plate.
+  # The plate replaces the tile's own focus ring, so keyboard focus gets a 2 px ring on every tile.
   # The domain list matters: the tile card marks any entity with a value as active, sensors included.
   card-mod-card: |
     ha-logbook { --card-background-color: var(--glass-date-row); }
@@ -176,6 +177,7 @@ Clear Sky:
       -webkit-backdrop-filter: none;
       backdrop-filter: none;
     }
+    ha-card:has(ha-tile-container[focused]) { box-shadow: var(--ha-card-box-shadow), 0 0 0 2px var(--ha-color-focus) !important; }
   # Optional, card-mod 4.x: settings icons as rounded squares instead of circles
   card-mod-config: |
     :host {
