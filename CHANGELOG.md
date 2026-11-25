@@ -5,6 +5,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), ver
 
 ## [Unreleased]
 
+## [1.0.3] - 2026-11-25
+
+### Fixed
+- Keyboard focus on tiles: active tiles on the bright plate showed no focus ring at all, and inactive tiles only a faint grey one (about 2.6:1 on the light sky). Focused tiles now get a 2 px ring in the theme blue with a white halo in light mode, at least 3:1 against both sides (WCAG 2.2, 1.4.11). The plate keeps its glow. Needs card-mod, like the other glass extras.
+
 ## [1.0.2] - 2026-11-24
 
 ### Changed
