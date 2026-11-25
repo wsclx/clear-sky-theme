@@ -28,6 +28,8 @@ Clear Sky:
   primary-color: "#0068d6"
   # Focus ring: at least 3:1 on glass and on the bright plate (the frontend default grey reaches 2.6:1)
   ha-color-focus: "#0068d6"
+  # White halo outside the ring keeps 3:1 against the light sky (blue alone: 2.5:1)
+  clear-sky-focus-halo: "#ffffff"
   accent-color: "#0068d6"
   text-primary-color: "#ffffff"
   primary-text-color: "#1d1d1f"
@@ -175,13 +177,14 @@ Clear Sky:
       border-color: transparent;
       --clear-sky-tile-shadow: 0 10px 28px var(--glass-on-glow), 0 1px 2px rgba(0,0,0,.08);
       --clear-sky-focus-ring: #0068d6;
+      --clear-sky-focus-halo: #ffffff;
       box-shadow: var(--clear-sky-tile-shadow);
       --primary-text-color: var(--glass-on-plate-text);
       --secondary-text-color: var(--glass-on-plate-text-2);
       -webkit-backdrop-filter: none;
       backdrop-filter: none;
     }
-    ha-card:has(ha-tile-container[focused]) { box-shadow: 0 0 0 2px var(--clear-sky-focus-ring, var(--ha-color-focus)), var(--clear-sky-tile-shadow, var(--ha-card-box-shadow)) !important; }
+    ha-card:has(ha-tile-container[focused]) { box-shadow: 0 0 0 2px var(--clear-sky-focus-ring, var(--ha-color-focus)), 0 0 0 4px var(--clear-sky-focus-halo, transparent), var(--clear-sky-tile-shadow, var(--ha-card-box-shadow)) !important; }
   # Optional, card-mod 4.x: settings icons as rounded squares instead of circles
   card-mod-config: |
     :host {
@@ -219,6 +222,7 @@ Clear Sky:
       glass-on-glow: "rgba(255,180,90,.22)"
       primary-color: "#4c9dff"
       ha-color-focus: "#4c9dff"
+      clear-sky-focus-halo: "transparent"
       accent-color: "#4c9dff"
       # Dark text on the light blue: white on #4c9dff only reaches 2.8:1
       text-primary-color: "#001229"
